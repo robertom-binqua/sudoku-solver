@@ -5,9 +5,7 @@ import munit.FunSuite
 
 class SimpleSudokuResolverSpec extends FunSuite {
 
-  test(
-    "possibleValuesInCurrentPosition works if it has to find 1 to 9 values in case of vertical, horizontal and square -"
-  ) {
+  test("resolve can do its job ;-)") {
 
     val solvedAsString =
       """| 123 456 789
@@ -22,16 +20,16 @@ class SimpleSudokuResolverSpec extends FunSuite {
          |""".stripMargin
 
     val gridAsString =
-      """  | -23 -56 7--
-           | -56 -89 12-
-           | -89 -2- 45-
-           | -34 -67 89-
-           | -67 -91 23-
-           | 891 -34 56-
-           | -45 -78 ---
-           | -78 -12 ---
-           | -12 -45 ---
-           |""".stripMargin
+      """| -23 -56 7--
+         | -56 -89 12-
+         | -89 -2- 45-
+         | -34 -67 89-
+         | -67 -91 23-
+         | 891 -34 56-
+         | -45 -78 ---
+         | -78 -12 ---
+         | -12 -45 ---
+         |""".stripMargin
 
     assertEquals(
       obtained = Grid.from(gridAsString).map(SimpleSudokuResolver.resolve),

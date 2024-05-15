@@ -219,4 +219,27 @@ abstract case class Grid(squares: List[Square]) {
     newGrid <- Grid.from(squares.updated(newSquare.index, newSquare))
   } yield newGrid
 
+  def prettyPrint: String = {
+
+    def fromValuesToLine(line: List[SudoValue]): String =
+      line.zipWithIndex
+        .map({ case (value, index) => if (index == 2 || index == 5) s"${value.value} | " else s"${value.value}" })
+        .mkString
+
+    val lines: List[String] = Grid
+      .gridLines(NineSquaresSorted.from(squares).toOption.get)
+      .map(fromValuesToLine)
+
+    val dashesString = List.fill(15)("-").mkString
+
+    def toLineString: ((String, Int)) => String = input => {
+      val (lineAsString, index) = input
+      if (index == 2 || index == 5) s"$lineAsString\n$dashesString\n" else s"$lineAsString\n"
+    }
+
+    lines.zipWithIndex
+      .map(toLineString)
+      .mkString
+  }
+
 }

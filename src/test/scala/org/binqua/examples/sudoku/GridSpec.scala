@@ -75,7 +75,7 @@ class GridSpec extends FunSuite {
 
   }
 
-  test("newGridWithPositionMovedForward with only 1 - solved it and move current position to none") {
+  test("buildNewGrid with only 1 - solved it and move current position to none") {
     val gridAsString =
       """| -23 456 789
          | 456 789 123
@@ -101,7 +101,7 @@ class GridSpec extends FunSuite {
 
   }
 
-  test("newGridWithPositionMovedForward with only 1 - solved it") {
+  test("buildNewGrid with only 1 - solved it") {
     val gridAsString =
       """| -23 456 789
          | 456 789 123
@@ -126,7 +126,7 @@ class GridSpec extends FunSuite {
 
   }
 
-  test("newGridWithPositionMovedForward with a grid with only 1 - at the end corner solved it") {
+  test("buildNewGrid with a grid with only 1 - at the end corner solved it") {
     val gridAsString =
       """| -23 456 789
          | 456 789 123
@@ -153,7 +153,7 @@ class GridSpec extends FunSuite {
 
   }
 
-  test("newGridWithPositionMovedForward with only 2 - ....") {
+  test("buildNewGrid with only 2 - ....") {
     val gridAsString =
       """| --3 456 789
          | 456 789 123
@@ -178,7 +178,7 @@ class GridSpec extends FunSuite {
 
   }
 
-  test("newGridWithPositionMovedForward with only 2 - can be solved in 2 steps") {
+  test("buildNewGrid with only 2 - can be solved in 2 steps") {
     val gridAsString =
       """| --3 456 789
          | 456 789 123
@@ -270,7 +270,7 @@ class GridSpec extends FunSuite {
 
   }
 
-  test("possibleValuesInCurrentPosition works if it has to find only 1 values in case of vertical -") {
+  test("possibleValuesInFirstDashPosition works if it has to find only 1 values in case of vertical -") {
     val gridAsString =
       """| -23 456 789
          | -56 789 123
@@ -291,7 +291,7 @@ class GridSpec extends FunSuite {
   }
 
   test(
-    "possibleValuesInCurrentPosition works if it has to find 1, 2, 4, 7 values in case of vertical and horizontal -"
+    "possibleValuesInFirstDashPosition works if it has to find 1, 2, 4, 7 values in case of vertical and horizontal -"
   ) {
     val gridAsString =
       """| --- --- ---
@@ -313,7 +313,7 @@ class GridSpec extends FunSuite {
   }
 
   test(
-    "possibleValuesInCurrentPosition works if it has to find 1 to 9 values in case of vertical, horizontal and square -"
+    "possibleValuesInFirstDashPosition works if it has to find 1 to 9 values in case of vertical, horizontal and square -"
   ) {
     val gridAsString =
       """| --- --- ---
