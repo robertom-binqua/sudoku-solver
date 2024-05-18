@@ -1,6 +1,5 @@
 package org.binqua.examples.sudoku
 
-import cats.implicits.catsSyntaxEitherId
 import munit.FunSuite
 
 class SimpleSudokuResolverSpec extends FunSuite {
